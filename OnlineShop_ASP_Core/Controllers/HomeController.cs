@@ -17,6 +17,10 @@ namespace OnlineShop_ASP_Core.Controllers {
             _logger = logger;
         }
 
+        public HomeController(ApplicationContext context) {
+            _context = context;
+        }
+
         public IActionResult Index() {
             return View();
         }
@@ -30,8 +34,13 @@ namespace OnlineShop_ASP_Core.Controllers {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        /// <summary>
+        /// List of employees
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Employees() {
             var employees = await _context.Employees.ToListAsync();
+            return View(employees);
         }
             
     }
