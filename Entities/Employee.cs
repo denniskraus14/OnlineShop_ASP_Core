@@ -13,7 +13,7 @@ namespace OnlineShop_ASP_Core.Models {
         public string Name { get; set; }
 
         [Required]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Required]
         public string Position { get; set; }

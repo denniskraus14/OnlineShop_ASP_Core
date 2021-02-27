@@ -24,7 +24,11 @@ namespace OnlineShop_ASP_Core {
             services.AddControllersWithViews();
 
             // Connect to the database
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContextPool<ApplicationContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), 
+                options => options.MigrationsAssembly("OnlineShop_ASP_Core")
+            ));
 
             // Identity Configuration: user-management actions
             services.AddIdentity<User, IdentityRole>(opt => {

@@ -11,7 +11,10 @@ namespace OnlineShop_ASP_Core {
         /// Map email to the username since we are not going to use username in the registration form
         /// </summary>
         public MappingProfile() {
-            CreateMap<UserRegistrationModel, User>().ForMember(u => u.UserName, opt => opt.MapFrom(x => x.Email));
+            CreateMap<UserRegistrationModel, User>().ForMember(
+                user => user.UserName, 
+                option => option.MapFrom(x => x.Email)
+            );
         }
     }
 }
