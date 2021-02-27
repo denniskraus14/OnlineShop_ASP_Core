@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using OnlineShop_ASP_Core.Models;
 
 namespace Entities {
     public class Startup {
@@ -21,6 +16,10 @@ namespace Entities {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
+            // AddDbContextPool<>() Replaced AddDbContext<>()
+            // AddDbContextPool<>(): This will first check to see if there are avaiable instances. If there is an available instance
+            // then it will oyu one of those, if not then it will create a new instance into the IOC container.
+            services.AddDbContextPool<ApplicationContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("sqlConnection")));
             services.AddControllers();
         }
 
