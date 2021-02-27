@@ -9,16 +9,13 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Controllers {
-    public class HomeController : Controller {
-        private readonly ILogger<HomeController> _logger;
+    public class HomeController : Controller {        
         private readonly ApplicationContext _context;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger) {
-            _logger = logger;
-        }
-
-        public HomeController(ApplicationContext context) {
+        public HomeController(ApplicationContext context, ILogger<HomeController> logger) {
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult Index() {

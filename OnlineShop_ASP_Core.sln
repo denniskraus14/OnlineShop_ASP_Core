@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop_ASP_Core", "OnlineShop_ASP_Core\OnlineShop_ASP_Core.csproj", "{D60D0823-EECC-48DD-B0E2-D58B02AE9E89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop_ASP_Core", "OnlineShop_ASP_Core\OnlineShop_ASP_Core.csproj", "{D60D0823-EECC-48DD-B0E2-D58B02AE9E89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{AC0260DD-8484-44FE-A8A7-D37514E754C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D60D0823-EECC-48DD-B0E2-D58B02AE9E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60D0823-EECC-48DD-B0E2-D58B02AE9E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60D0823-EECC-48DD-B0E2-D58B02AE9E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0260DD-8484-44FE-A8A7-D37514E754C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0260DD-8484-44FE-A8A7-D37514E754C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0260DD-8484-44FE-A8A7-D37514E754C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0260DD-8484-44FE-A8A7-D37514E754C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
