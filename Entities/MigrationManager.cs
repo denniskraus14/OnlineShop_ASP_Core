@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using LoggerService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace Entities {
     public static class MigrationManager {
-        private static readonly ILoggerManager _logger;
+        //private static readonly NLog.Logger _logger = NLog.LogManager.GetLogger(typeof(LoggerManager).FullName);
 
         /// <summary>
         /// Extension method for creating and starting all the migrations at the application startup
@@ -22,7 +23,8 @@ namespace Entities {
                     try {
                         appContext.Database.Migrate();
                     } catch (Exception e) {
-                        _logger.LogError("ERROR: " + e.Message);
+                        // TODO: Create log from ILoggerManager
+                        //_logger.LogError("ERROR: " + e.Message);
                         throw;
                     }
                 }
