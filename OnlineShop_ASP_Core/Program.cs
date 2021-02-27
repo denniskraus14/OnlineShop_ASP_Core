@@ -1,3 +1,4 @@
+using Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -10,7 +11,10 @@ using System.Threading.Tasks;
 namespace OnlineShop_ASP_Core {
     public class Program {
         public static void Main(string[] args) {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args)
+                .Build()
+                .MigrateDatabase()
+                .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
