@@ -24,7 +24,11 @@ namespace OnlineShop_ASP_Core {
             services.AddControllersWithViews();
 
             // Connect to the database
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContextPool<ApplicationContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), 
+                options => options.MigrationsAssembly("OnlineShop_ASP_Core")
+            ));
 
             // Identity Configuration: user-management actions
             services.AddIdentity<User, IdentityRole>(opt => {
@@ -34,6 +38,10 @@ namespace OnlineShop_ASP_Core {
 
                 opt.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<ApplicationContext>();
+
+            // Register AutoMapper
+            services.AddAutoMapper(typeof(Startup));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

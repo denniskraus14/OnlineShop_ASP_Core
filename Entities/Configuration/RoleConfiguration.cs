@@ -8,7 +8,14 @@ using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Models.Configuration {
     public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole> {
+
+        /// <summary>
+        /// Used to seed data to the database
+        /// </summary>
+        /// <param name="builder"></param>
         public void Configure(EntityTypeBuilder<IdentityRole> builder) {
+            builder.ToTable("Role");
+
             builder.HasData(
                 new IdentityRole {
                     Name = "Guest",

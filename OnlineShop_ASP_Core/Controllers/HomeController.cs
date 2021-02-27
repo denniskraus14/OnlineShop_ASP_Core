@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Controllers {
-    public class HomeController : Controller {
-        private readonly ILogger<HomeController> _logger;
+    public class HomeController : Controller {        
         private readonly ApplicationContext _context;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger) {
+        public HomeController(ApplicationContext context, ILogger<HomeController> logger) {
+            _context = context;
             _logger = logger;
         }
 
@@ -30,8 +31,13 @@ namespace OnlineShop_ASP_Core.Controllers {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        /// <summary>
+        /// List of employees
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Employees() {
             var employees = await _context.Employees.ToListAsync();
+            return View(employees);
         }
             
     }

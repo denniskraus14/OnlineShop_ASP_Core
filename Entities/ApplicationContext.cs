@@ -1,14 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OnlineShop_ASP_Core.Models.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Models {
 
-    public class ApplicationContext : DbContext {
-        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
+    public class ApplicationContext : IdentityDbContext<User> {
+        public ApplicationContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
