@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using OnlineShop_ASP_Core.Models;
@@ -35,6 +36,7 @@ namespace OnlineShop_ASP_Core.Controllers {
         /// List of employees
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         public async Task<IActionResult> Employees() {
             var employees = await _context.Employees.ToListAsync();
             return View(employees);

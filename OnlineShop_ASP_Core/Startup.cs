@@ -51,9 +51,13 @@ namespace OnlineShop_ASP_Core {
             } else {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // Add authentication Middleware to ASP.NET Core's pipeline
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
