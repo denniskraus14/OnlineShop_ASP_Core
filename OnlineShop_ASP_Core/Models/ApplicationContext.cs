@@ -5,7 +5,7 @@ using OnlineShop_ASP_Core.Models.Configuration;
 namespace OnlineShop_ASP_Core.Models {
 
     public class ApplicationContext : IdentityDbContext<User> {
-        public ApplicationContext(DbContextOptions options) : base(options) { }
+        public ApplicationContext(DbContextOptions <ApplicationContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
