@@ -72,7 +72,9 @@ namespace OnlineShop_ASP_Core.Controllers {
                 if (result==null) {
                     return View(userModel);
                 }
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                //Session["Email"] = result.Email;
+                //Session["Id"] = result.Id;
+                return RedirectToAction(nameof(ShopController.Portal), "Shop");
             }
         }
     }
