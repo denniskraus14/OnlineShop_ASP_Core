@@ -27,7 +27,7 @@ namespace OnlineShop_ASP_Core {
             //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContextPool<ApplicationContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), 
-                options => options.MigrationsAssembly("OnlineShop_ASP_Core")
+                options => options.MigrationsAssembly("OnlineShop_ASP_Core") // This allows multiple DBcontext Classes to be created.
             ));
 
             // Identity Configuration: user-management actions
@@ -61,6 +61,7 @@ namespace OnlineShop_ASP_Core {
 
             app.UseAuthorization();
 
+            // Handles the URL routing
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",

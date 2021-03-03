@@ -6,14 +6,14 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Models.Configuration {
-    public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>{
+    public class EmployeeConfiguration : IEntityTypeConfiguration<Employee> {
 
         /// <summary>
         /// Used to seed data to the database
         /// </summary>
         /// <param name="builder"></param>
         public void Configure(EntityTypeBuilder<Employee> builder) {
-            builder.ToTable("Employee");
+            //builder.ToTable("Employee");
             builder.Property(e => e.Age).IsRequired(false);
             // Can be used to determine the role this employee gets within the website
             //builder.Property(e => e.IsRegularEmployee).HasDefaultValue(true);
