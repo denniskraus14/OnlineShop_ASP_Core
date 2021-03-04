@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineShop.Entities.Account.ViewModels {
+namespace OnlineShop.ViewModel.Account {
     public class RegistrationViewModel {
-
-        public string FirstName { get; set;  }
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 

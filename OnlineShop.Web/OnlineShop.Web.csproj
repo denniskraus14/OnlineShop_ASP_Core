@@ -21,6 +21,7 @@
     <ProjectReference Include="..\OnlineShop.Data\OnlineShop.Data.csproj" />
     <ProjectReference Include="..\OnlineShop.Entities\OnlineShop.Entities.csproj" />
     <ProjectReference Include="..\OnlineShop.LoggerService\OnlineShop.LoggerService.csproj" />
+    <ProjectReference Include="..\OnlineShop.ViewModel\OnlineShop.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>
