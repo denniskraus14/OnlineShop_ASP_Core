@@ -24,7 +24,7 @@ namespace OnlineShop_ASP_Core {
             //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContextPool<ApplicationContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), 
-                options => options.MigrationsAssembly("OnlineShop_ASP_Core") // This allows multiple DBcontext Classes to be created.
+                options => options.MigrationsAssembly("OnlineShop.Data") // This allows multiple DBcontext Classes to be created.
             ));
 
             // Identity Configuration: user-management actions
