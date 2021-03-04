@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineShop.Entities.Account.ViewModels {
+namespace OnlineShop.ViewModel.Account {
     public class LoginViewModel {
         [EmailAddress]
         [Required(ErrorMessage = "Email is required")]

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using OnlineShop.Entities.Account;
-using OnlineShop.Entities.Account.ViewModels;
+using OnlineShop.ViewModel.Account;
 
 namespace OnlineShop_ASP_Core {
     public class MappingProfile : Profile {

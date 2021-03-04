@@ -1,4 +1,4 @@
-namespace OnlineShop.Entities.Error.ViewModels {
+﻿namespace OnlineShop.ViewModel.Error {
     public class ErrorViewModel {
         public string RequestId { get; set; }
 
