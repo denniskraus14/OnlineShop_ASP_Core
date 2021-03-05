@@ -1,7 +1,82 @@
-﻿@{
+﻿@model IEnumerable<OnlineShop.ViewModel.ProductViews.ProductDisplayViewModel>
+
+@{
     ViewBag.Title = "Portal";
 }
 
 <div class="container text-center">
     Products go here
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+                @*@Html.DisplayNameFor(model => item.Name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+                @*@Html.DisplayNameFor(model => item.Age)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+                @*@Html.DisplayNameFor(model => item.Position)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+                @*@Html.DisplayNameFor(model => item.Position)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+                @*@Html.DisplayNameFor(model => item.Position)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+                @*@Html.DisplayNameFor(model => item.Position)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+                @*@Model.Name*@
+                @*@item.Name*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                @*@Model.Age*@
+                @*@item.Name*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+                @*@Model.Position*@
+                @*@item.Description*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+                @*@Model.Position*@
+                @*@item.Price*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+                @*@Model.Position*@
+                @*@item.Quantity*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+                @*@Model.Position*@
+                @*@item.Category*@
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

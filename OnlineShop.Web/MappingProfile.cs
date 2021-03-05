@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using OnlineShop.Entities.Account;
 using OnlineShop.Entities.Employee;
+using OnlineShop.Entities.Product;
 using OnlineShop.ViewModel.AccountViews;
 using OnlineShop.ViewModel.EmployeeViews;
+using OnlineShop.ViewModel.ProductViews;
 
 namespace OnlineShop_ASP_Core {
     public class MappingProfile : Profile {
@@ -28,6 +30,9 @@ namespace OnlineShop_ASP_Core {
 
             // Try #3
             CreateMap<Employee, EmployeeDisplayViewModel>();
+
+
+            CreateMap<Product, ProductDisplayViewModel>();
         }
     }
 }

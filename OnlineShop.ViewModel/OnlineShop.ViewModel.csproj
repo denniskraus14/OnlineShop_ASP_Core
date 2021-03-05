@@ -8,8 +8,4 @@
     <ProjectReference Include="..\OnlineShop.Data\OnlineShop.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ProductViews\" />
-  </ItemGroup>
-
 </Project>
