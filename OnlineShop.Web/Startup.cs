@@ -6,7 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineShop.Data;
+using OnlineShop.Data.Repositories.EmployeeRepo;
 using OnlineShop.Entities.Account;
+using OnlineShop.ViewModel.EmployeeViews;
 
 namespace OnlineShop_ASP_Core {
     public class Startup {
@@ -27,6 +29,9 @@ namespace OnlineShop_ASP_Core {
                 options => options.MigrationsAssembly("OnlineShop.Data") // This allows multiple DBcontext Classes to be created.
             ));
 
+            // Add Classes for the Scoped DI's
+            InjectAppServices(services);
+
             // Identity Configuration: user-management actions
             services.AddIdentity<User, IdentityRole>(opt => {
                 opt.Password.RequiredLength = 7;
@@ -39,6 +44,16 @@ namespace OnlineShop_ASP_Core {
             // Register AutoMapper
             services.AddAutoMapper(typeof(Startup));
 
+        }
+
+        /// <summary>
+        /// Instead of having an overly large ConfigureServices() method, we have this InjectAppServices
+        /// to handle all of our Classes for Scoped Dependency Injections (DI's)
+        /// </summary>
+        /// <param name="services"></param>
+        private void InjectAppServices(IServiceCollection services) {
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<EmployeeDisplayViewModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

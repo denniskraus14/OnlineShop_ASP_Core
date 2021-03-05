@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Data;
 using OnlineShop.Entities.Account;
-using OnlineShop.ViewModel.Account;
+using OnlineShop.ViewModel.AccountViews;
 using System.Threading.Tasks;
 
 namespace OnlineShop_ASP_Core.Controllers {
