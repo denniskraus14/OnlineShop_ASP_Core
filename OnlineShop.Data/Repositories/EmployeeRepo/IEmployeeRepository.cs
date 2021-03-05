@@ -1,5 +1,6 @@
 ﻿using OnlineShop.Entities.Employee;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OnlineShop.Data.Repositories.EmployeeRepo {
     /// <summary>
@@ -8,5 +9,8 @@ namespace OnlineShop.Data.Repositories.EmployeeRepo {
     /// </summary>
     public interface IEmployeeRepository {
         List<Employee> Get();
+        Task<List<Employee>> GetAsync();
+        List<Employee> GetAllEmployees();
+        IEnumerable<Employee> GetEmployees();
     }
 }
