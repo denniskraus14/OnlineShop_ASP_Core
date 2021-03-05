@@ -7,8 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineShop.Data;
 using OnlineShop.Data.Repositories.EmployeeRepo;
+using OnlineShop.Data.Repositories.ProductRepo;
 using OnlineShop.Entities.Account;
 using OnlineShop.ViewModel.EmployeeViews;
+using OnlineShop.ViewModel.ProductViews;
 
 namespace OnlineShop_ASP_Core {
     public class Startup {
@@ -52,8 +54,13 @@ namespace OnlineShop_ASP_Core {
         /// </summary>
         /// <param name="services"></param>
         private void InjectAppServices(IServiceCollection services) {
+            // Employees Score
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<EmployeeDisplayViewModel>();
+
+            // Products Scope
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ProductDisplayViewModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
